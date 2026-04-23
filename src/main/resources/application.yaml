@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: url-shortener
+  profiles:
+    default: local
+  datasource:
+    hikari:
+      connection-timeout: 10000
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+url-shortener:
+  shortener:
+    default-expiration-days: 365
+    base62-salt: gorilla
+    min-alias-len: 6
+    max-alias-len: 8
+    max-collision-retries: 5
